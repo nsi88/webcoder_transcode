@@ -23,7 +23,6 @@ class WebcoderTranscodeActivity
     puts $!.backtrace.join("\n")
   end
 
-
   private
 
   def toggle_state
@@ -31,8 +30,17 @@ class WebcoderTranscodeActivity
   end
 
   def start
+    if @host.text.empty?
+      log('Enter segmenter host')
+      return
+    end
+    log("Connecting to #{@host.text} ...")
   end
 
   def stop
+  end
+
+  def log(msg)
+    @log.text += msg + "\n"
   end
 end
