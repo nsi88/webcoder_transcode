@@ -7,3 +7,4 @@ bin
 gen
 local.properties
 tmp
+.rvmrc
